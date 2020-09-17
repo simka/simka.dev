@@ -1,0 +1,24 @@
+{
+  "title": "simka",
+  "url": "https://simka.dev",
+  "domain": "simka.dev",
+  "description": "personal site of maciej simka",
+  "genre": "Insert a schema.org genre",
+  "feed": {
+    "subtitle": "WIP",
+    "filename": "WIP",
+    "path": "WIP",
+    "id": "WIP"
+  },
+  "jsonfeed": {
+    "path": "WIP",
+    "url": "WIP"
+  },
+  "author": {
+    "name": "maciej simka",
+    "twitterHandle": "maciejsimka"
+  },
+  "publisher": {
+    "name": "maciej simka"
+  }
+}
