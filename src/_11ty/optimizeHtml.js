@@ -34,12 +34,12 @@ const purifyCss = async (rawContent, outputPath) => {
           raw: before,
         },
       ],
-      /*extractors: [
+      extractors: [
         {
-          extractor: require("purge-from-html").extract,
+          extractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
           extensions: ["html"],
         },
-      ],*/
+      ],
       fontFace: true,
       variables: true,
     });
