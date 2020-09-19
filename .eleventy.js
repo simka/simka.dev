@@ -18,8 +18,8 @@ module.exports = function (eleventyConfig) {
       output: "_dist",
     },
     passthroughFileCopy: true,
-    templateFormats: ["njk", "md"],
-    htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
+    templateFormats: ["pug", "md"],
+    htmlTemplateEngine: "pug",
+    markdownTemplateEngine: "pug",
   };
 };
