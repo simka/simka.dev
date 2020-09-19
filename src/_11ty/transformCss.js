@@ -14,10 +14,12 @@ async function transformCss(rawContent, outputPath) {
       ? [
           autoprefixer,
           purgecss({
-            content: {
-              raw: rawContent,
-              extension: "njk",
-            },
+            content: [
+              {
+                raw: rawContent,
+                extension: "html",
+              },
+            ],
           }),
         ]
       : []),

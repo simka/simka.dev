@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "eleventy --serve --port=8080",
     "build": "NODE_ENV=production eleventy",
+    "debug": "NODE_ENV=production DEBUG=Eleventy* eleventy",
     "clean": "rimraf _dist"
   },
   "dependencies": {
