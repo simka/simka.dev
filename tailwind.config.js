@@ -3,7 +3,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: [],
+  purge: false,
   theme: {
     fontFamily: {
       sans: ["Inter", "sans-serif"],

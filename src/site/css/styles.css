@@ -1,8 +1,10 @@
-@import "./font.css";
-
+/* purgecss start ignore */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+/* purgecss end ignore */
 @import "tailwindcss/utilities";
+
+@import "./font.css";
 
 @layer base {
   a {
