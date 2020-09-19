@@ -1,0 +1,15 @@
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(property='og:title' content=metadata.title)
+  meta(name='description' content=metadata.description)
+  meta(property='og:description' content=metadata.description)
+  meta(name='twitter:card' content='summary_large_image')
+  meta(name='twitter:site' content='@' + metadata.author.twitterHandle)
+  meta(name='twitter:creator' content='@' + metadata.author.twitterHandle)
+  meta(name='referrer' content='origin-when-cross-origin')
+  link(rel='canonical' href=metadata.url + page.url)
+  link(rel='preconnect' href='/' crossorigin)
+  link(rel='icon' type='image/svg+xml' href='/static/images/favicon.svg')
+  title.
+    #{metadata.title}
