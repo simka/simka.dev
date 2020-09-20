@@ -1,6 +1,7 @@
 const fs = require("fs");
 const postcss = require("postcss");
 const postcssImport = require("postcss-import");
+const postcssNested = require("postcss-nested");
 const tailwindcss = require("tailwindcss");
 const autoprefixer = require("autoprefixer");
 const purgecss = require("@fullhuman/postcss-purgecss");
@@ -9,6 +10,7 @@ const csso = require("csso");
 async function transformCss(rawContent, outputPath) {
   const postcssPlugins = [
     postcssImport,
+    postcssNested,
     tailwindcss,
     ...(process.env.NODE_ENV === "production"
       ? [
