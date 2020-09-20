@@ -1,0 +1,9 @@
+---
+layout: layouts/base.pug
+---
+
+div(style={'max-width': '42rem'} class='m-auto min-h-screen flex flex-col')
+  include /header.pug
+  main(class='p-4 flex flex-1') !{content}
+  include /about.pug
+  include /footer.pug
