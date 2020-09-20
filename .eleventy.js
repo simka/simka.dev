@@ -1,4 +1,10 @@
+const yaml = require("js-yaml");
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addDataExtension("yaml", (contents) =>
+    yaml.safeLoad(contents)
+  );
+
   eleventyConfig.addTransform(
     "transformCss",
     require("./src/_11ty/transformCss")
