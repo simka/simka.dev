@@ -1,11 +1,12 @@
 ---
 layout: layouts/minimal.pug
-title: resume /// simka
+title: simka /// resume
 ---
 
-article(class='flex flex-col print:grid sm:grid grid-cols-5 grid-rows-3-auto gap-4 pt-8')
+article(class='flex flex-col print:grid sm:grid grid-cols-5 grid-rows-3-auto gap-4')
   header(class='col-span-2 row-span-1')
-    h1(class='text-4xl font-black') #[a(href=basics.website) #{basics.name}]
+    h1(class='text-4xl font-black')
+      a(class='no-underline' href=basics.website) #{basics.name}
     h2(class='text-xl font-bold') #{basics.label}
   section(class='col-span-3 row-span-1')
     h3(class='text-xl font-bold') Summary
