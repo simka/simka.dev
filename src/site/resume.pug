@@ -11,7 +11,7 @@ article(class='flex flex-col print:grid sm:grid grid-cols-5 grid-rows-3-auto gap
   section(class='col-span-3 row-span-1')
     h3(class='text-xl font-bold') Summary
     p(class='text-sm') #{basics.summary} 
-  section(class='col-span-1 row-span-1 order-last sm:order-none')
+  section(class='col-span-1 row-span-1 order-last sm:order-none print:order-none')
     h3(class='text-xl font-bold') Contact
     p(class='text-xs') #[a(href='mailto:' + basics.email) Email]
     p(class='text-xs') #[a(href=basics.website) Website]
@@ -44,6 +44,6 @@ article(class='flex flex-col print:grid sm:grid grid-cols-5 grid-rows-3-auto gap
               p(class='text-sm') #{course.description}
   section(class='col-span-1 row-span-1')
     h3(class='text-xl font-bold') Skills
-    ul(class='flex flex-wrap flex-row sm:flex-col')
+    ul(class='flex flex-wrap flex-row sm:flex-col print:flex-col')
       each skill in skills
         li(class='text-xs pr-1') #{skill}
