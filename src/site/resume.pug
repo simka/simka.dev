@@ -28,11 +28,13 @@ article(class='flex flex-col print:grid sm:grid grid-cols-5 grid-rows-3-auto gap
           li(class='pb-4')
             h4(class='text-sm pb-2').
               #[strong #{job.position}] at #[a(href=job.website target='_blank' rel='noreferrer') #{job.company}] /// #{job.startDate} - #{job.endDate ? job.endDate : 'Now'}
-            p(class='text-sm pb-2') #{job.summary}
-            h5(class='text-sm') Highlights:
-            ul(class='list-disc list-inside')
-              each highlight in job.highlights
-                li(class='text-sm') #{highlight}
+            if job.summary
+              p(class='text-sm pb-2') #{job.summary}
+            if job.highlights
+              h5(class='text-sm') Highlights:
+              ul(class='list-disc list-inside')
+                each highlight in job.highlights
+                  li(class='text-sm') #{highlight}
     section
       h3(class='text-xl font-bold pb-2') Education
       ul

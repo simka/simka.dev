@@ -24,11 +24,16 @@
       icon: linkedin
       url: https://www.linkedin.com/in/maciejsimka/
   work:
+    - company: Brainly
+      position: Software Engineer
+      website: https://brainly.com/
+      startDate: Dec, 2020
+      endDate:
     - company: Callstack
       position: React/React Native Developer
       website: https://callstack.com/
       startDate: Mar, 2019
-      endDate:
+      endDate: Nov, 2020
       summary: >
         I've worked on a variety of SPAs and mobile apps for international clients,
         both greenfield and brownfield. Used technologies included React, React Native,
