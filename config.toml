@@ -29,3 +29,7 @@ enableGitInfo = true
   name = "letterboxd"
   label = "movies i watch"
   url = "https://letterboxd.com/mcjsimka/"
+
+[build]
+# Used to PurgeCSS
+writeStats = true

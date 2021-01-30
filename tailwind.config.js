@@ -1,5 +1,15 @@
 module.exports = {
-  purge: ['layouts/**/*.html'],
+  purge: {
+    enabled: process.env.HUGO_ENVIRONMENT === 'production',
+    content: [ './hugo_stats.json' ],
+		mode: 'all',
+		options: {
+			defaultExtractor: (content) => {
+        let els = JSON.parse(content).htmlElements;
+        return els.tags.concat(els.classes, els.ids);
+			}
+		}
+	},
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {

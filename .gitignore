@@ -1,4 +1,5 @@
 node_modules
 
 # build artefacts
-_dist
+public
+hugo_stats.json
