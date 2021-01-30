@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Description" content="{{ .Site.Params.description }}">
 
-    {{ $styles := resources.Get "css/main.css" | postCSS (dict "inlineImports" true) }}
-
-    {{ if .Site.IsServer }}
-      <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
-    {{ else }}
-      {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-      <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
+    {{ $options := dict "inlineImports" true }}
+    {{ $styles := resources.Get "css/main.css" }}
+    {{ $styles = $styles | resources.PostCSS $options }}
+    {{ if  hugo.IsProduction  }}
+      {{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
     {{ end }}
+    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
 
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
 
     <title>
       {{ block "title" . }}
-         {{ .Site.Title }}
+         {{ .Title }}
        {{ end }}
     </title> 
   </head>
@@ -37,6 +36,10 @@
       {{ block "footer" . }}
       {{ end }}
     </div>
+
+    {{ if  hugo.IsProduction  }}
+    <script data-goatcounter="https://simka.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    {{ end }}
   </body>
 
 </html>
