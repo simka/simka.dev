@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "hugo server -p 1312",
-    "build": "NODE_ENV=production hugo --minify",
+    "build": "hugo --gc --minify -d public",
+    "build:preview": "hugo --gc --minify --buildDrafts --buildFuture -d public",
     "postbuild": "bin/generateResumePdf.js",
     "prebuild": "yarn clean",
     "clean": "rimraf public"

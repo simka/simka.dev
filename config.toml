@@ -1,10 +1,11 @@
 baseURL = "https://simka.dev"
 languageCode = "en-us"
 title = "simka"
-description = "personal site of maciej simka, software developer"
-enableGitInfo = true
+disableKinds = ["taxonomy", "term"]
 
 [params]
+description = "personal site of maciej simka, software developer"
+
   [[params.social]]
   name = "github"
   label = "github"
@@ -33,3 +34,4 @@ enableGitInfo = true
 [build]
 # Used to PurgeCSS
 writeStats = true
+
