@@ -11,7 +11,7 @@ async function generateResumePdf() {
   const page = await browser.newPage();
 
   const html = fs.readFileSync(
-    `${process.cwd()}/_dist/resume/index.html`,
+    `${process.cwd()}/public/resume/index.html`,
     "utf8"
   );
   await page.setContent(html, {
@@ -19,7 +19,7 @@ async function generateResumePdf() {
   });
 
   await page.pdf({
-    path: `${process.cwd()}/_dist/static/resume.pdf`,
+    path: `${process.cwd()}/public/resume.pdf`,
     preferCSSPageSize: true,
   });
 

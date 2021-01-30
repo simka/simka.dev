@@ -3,26 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "eleventy --serve --port=8080",
-    "build": "NODE_ENV=production eleventy",
+    "dev": "hugo server -p 1312",
+    "build": "NODE_ENV=production hugo --minify",
     "postbuild": "bin/generateResumePdf.js",
-    "debug": "NODE_ENV=production DEBUG=Eleventy* eleventy",
-    "clean": "rimraf _dist"
+    "prebuild": "yarn clean",
+    "clean": "rimraf public"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "@fullhuman/postcss-purgecss": "^3.0.0",
-    "autoprefixer": "^10.0.4",
-    "clear": "^0.1.0",
-    "csso": "^4.2.0",
-    "html-minifier": "^4.0.0",
-    "js-yaml": "^3.14.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.1.10",
-    "postcss-import": "^13.0.0",
-    "postcss-nested": "^5.0.1",
+    "autoprefixer": "^10.2.3",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
     "puppeteer": "^5.5.0",
     "rimraf": "^3.0.2",
-    "tailwindcss": "^2.0.1"
+    "tailwindcss": "^2.0.2"
   }
 }

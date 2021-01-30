@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './font.css';
+
+@layer base {
+  a {
+    @apply underline;
+  }
+}

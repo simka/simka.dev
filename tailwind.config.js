@@ -1,9 +1,6 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: false,
+  purge: ['layouts/**/*.html'],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
@@ -23,6 +20,8 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [],
-};
+}

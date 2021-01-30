@@ -1,0 +1,19 @@
+{{ define "header" }}
+  {{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <ul class="text-xl">
+    <li class="py-1"><a href="/resume">resume/cv</a></li>
+    {{ range .Site.Params.social }}
+    <li class="py-1">
+      <a href="{{.url}}" target="_blank" rel="noreferrer">{{.label}}</a>
+    </li>
+    {{ end }}
+  </ul>
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "about.html" . }} 
+  {{ partial "footer.html" }}
+{{ end }}
