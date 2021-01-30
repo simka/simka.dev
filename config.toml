@@ -31,6 +31,11 @@ description = "personal site of maciej simka, software developer"
   label = "movies i watch"
   url = "https://letterboxd.com/mcjsimka/"
 
+  [[params.social]]
+  name = "soundcloud"
+  label = "sounds i make"
+  url = "https://soundcloud.com/decorative-houseplant"
+
 [build]
 # Used to PurgeCSS
 writeStats = true
