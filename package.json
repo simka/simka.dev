@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "hugo server -p 1312",
+    "dev": "hugo server --buildDrafts --buildFuture -p 1312",
     "build": "hugo --gc --minify -d public",
     "build:preview": "hugo --gc --minify --buildDrafts --buildFuture -d public",
     "postbuild": "bin/generateResumePdf.js",
@@ -11,6 +11,7 @@
     "clean": "rimraf public"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.3",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",

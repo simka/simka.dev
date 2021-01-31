@@ -1,0 +1,26 @@
+{{ define "header" }}
+  {{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <article class="prose">
+    {{ .Content }}
+  </article>
+  <ul>
+    {{ range .Pages.ByDate }}
+    <li>
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+    <p>
+      {{.Summary}}
+    </p>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ define "footer" }}
+  {{ partial "about.html" . }} 
+  {{ partial "footer.html" }}
+{{ end }}
