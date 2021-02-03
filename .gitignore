@@ -1,6 +1,6 @@
 node_modules
 
 # build artefacts
-public
+/public
 hugo_stats.json
-resources
+/resources
