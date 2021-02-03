@@ -2,15 +2,15 @@
 <main>
   <article class="flex flex-col print:grid sm:grid grid-cols-5 grid-rows-3-auto gap-4">
     <header class="col-span-2 row-span-1">
-      <h1 class="text-4xl font-black"><a class="no-underline" href="{{ .Params.basics.website }}">{{.Params.basics.name}}</a></h1>
-      <h2 class="text-xl font-bold">{{.Params.basics.label}}</h2>
+      <h1 class="text-4xl font-semibold"><a class="no-underline" href="{{ .Params.basics.website }}">{{.Params.basics.name}}</a></h1>
+      <h2 class="text-xl font-semibold">{{.Params.basics.label}}</h2>
     </header>
     <section class="col-span-3 row-span-1">
-      <h3 class="text-xl font-bold">Summary</h3>
+      <h3 class="text-xl font-semibold">Summary</h3>
       <p class="text-sm">{{ .Params.basics.summary }}</p>
     </section>
     <section class="col-span-1 row-span-1 order-last sm:order-none print:order-none">
-      <h3 class="text-xl font-bold">Contact</h3>
+      <h3 class="text-xl font-semibold">Contact</h3>
       <p class="text-xs"><a href="{{ .Params.basics.email }}">Email</a></p>
       <p class="text-xs"><a href="{{ .Params.basics.website }}">Website</a></p>
       <ul>
@@ -24,12 +24,12 @@
     </section>
     <div class="col-span-4 row-span-2">
       <section class="pb-4">
-        <h3 class="text-xl font-bold pb-2">Experience</h3>
+        <h3 class="text-xl font-semibold pb-2">Experience</h3>
         <ul>
           {{ range .Params.work }}
           <li class="pb-4">
             <h4 class="text-sm pb-2">
-              <strong>{{.position}}</strong> at <a href="" target="_blank" rel="noreferrer">{{ .company }}</a> /// {{ .startDate }} - {{ .endDate }} 
+              <strong class="font-semibold">{{.position}}</strong> at <a href="" target="_blank" rel="noreferrer">{{ .company }}</a> /// {{ .startDate }} - {{ .endDate }} 
             </h4>
             {{ with .summary }}
             <p class="text-sm pb-2">
@@ -54,12 +54,12 @@
         </ul>
       </section>
       <section>
-        <h3 class="text-xl font-bold pb-2">Education</h3>
+        <h3 class="text-xl font-semibold pb-2">Education</h3>
         <ul>
           {{ range .Params.education }}
           <li class="pb-4">
             <h4 class="text-sm">
-              <strong>{{ .area }}</strong> at {{ .institution }} /// {{ .startDate }} - {{ .endDate }}
+              <strong class="font-semibold">{{ .area }}</strong> at {{ .institution }} /// {{ .startDate }} - {{ .endDate }}
             </h4>
             {{ with .description }}
             <p class="text-sm">{{ . }}</p>
@@ -70,7 +70,7 @@
       </section> 
     </div>
     <section class="col-span-1 row-span-1">
-      <h3 class="text-xl font-bold">Skills</h3>
+      <h3 class="text-xl font-semibold">Skills</h3>
       <ul class="flex flex-wrap flex-row sm:flex-col print:flex-col">
         {{ range .Params.skills }}
         <li class="text-xs pr-1">{{ . }}</li>

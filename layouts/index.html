@@ -3,11 +3,11 @@
 {{ end }}
 
 {{ define "main" }}
-  <ul class="text-xl">
-    <li class="py-1"><a href="/resume">resume/cv</a></li>
+  <ul>
+    <li class="py-2"><a href="/resume" class="text-2xl">resume/cv</a></li>
     {{ range .Site.Params.social }}
-    <li class="py-1">
-      <a href="{{.url}}" target="_blank" rel="noreferrer">{{.label}}</a>
+    <li class="py-2">
+      <a href="{{.url}}" target="_blank" rel="noreferrer" class="text-2xl">{{.label}}</a>
     </li>
     {{ end }}
   </ul>

@@ -1,3 +1,5 @@
+const typography = require('@tailwindcss/typography');
+
 module.exports = {
   purge: {
     enabled: process.env.HUGO_ENVIRONMENT === 'production',
@@ -34,6 +36,6 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('@tailwindcss/typography'),
+    typography,
   ],
 }
