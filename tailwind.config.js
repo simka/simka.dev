@@ -1,41 +1,87 @@
-const typography = require('@tailwindcss/typography');
+const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: {
-    enabled: process.env.HUGO_ENVIRONMENT === 'production',
-    content: [ './hugo_stats.json' ],
-		mode: 'all',
-		options: {
-			defaultExtractor: (content) => {
-        let els = JSON.parse(content).htmlElements;
-        return els.tags.concat(els.classes, els.ids);
-			}
-		}
-	},
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      white: colors.white,
+      black: colors.black,
+      gray: colors.warmGray,
+    },
     fontFamily: {
-      sans: ["Inter", "sans-serif"],
+      sans: ["Work Sans", "monospace"],
     },
     extend: {
-      screens: {
-        'print': {'raw': 'print'},
-        'dark': {'raw': '(prefers-color-scheme: dark)'},
-      },
-      gridTemplateRows: {
-        "1-auto": "repeat(1, auto)",
-        "2-auto": "repeat(2, auto)",
-        "3-auto": "repeat(3, auto)",
-        "4-auto": "repeat(4, auto)",
-        "5-auto": "repeat(5, auto)",
-        "6-auto": "repeat(6, auto)",
-      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: [
+            {
+              color: theme("colors.gray.300"),
+              '[class~="lead"]': {
+                color: theme("colors.gray.200"),
+              },
+              a: {
+                color: theme("colors.white"),
+              },
+              strong: {
+                color: theme("colors.white"),
+              },
+              "ol > li::before": {
+                color: theme("colors.gray.400"),
+              },
+              "ul > li::before": {
+                backgroundColor: theme("colors.gray.600"),
+              },
+              hr: {
+                borderColor: theme("colors.gray.200"),
+              },
+              blockquote: {
+                color: theme("colors.gray.200"),
+                borderLeftColor: theme("colors.gray.600"),
+              },
+              h1: {
+                color: theme("colors.white"),
+              },
+              h2: {
+                color: theme("colors.white"),
+              },
+              h3: {
+                color: theme("colors.white"),
+              },
+              h4: {
+                color: theme("colors.white"),
+              },
+              "figure figcaption": {
+                color: theme("colors.gray.400"),
+              },
+              code: {
+                color: theme("colors.white"),
+              },
+              "a code": {
+                color: theme("colors.white"),
+              },
+              pre: {
+                color: theme("colors.gray.200"),
+                backgroundColor: theme("colors.gray.800"),
+              },
+              thead: {
+                color: theme("colors.white"),
+                borderBottomColor: theme("colors.gray.400"),
+              },
+              "tbody tr": {
+                borderBottomColor: theme("colors.gray.600"),
+              },
+            },
+          ],
+        },
+      }),
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [
-    typography,
-  ],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
