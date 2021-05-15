@@ -1,6 +1,4 @@
 node_modules
 
 # build artefacts
-/public
-hugo_stats.json
-/resources
+.next
