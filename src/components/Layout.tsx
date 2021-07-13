@@ -6,7 +6,6 @@ import Text from "./Text";
 
 type Props = {
   children: React.ReactNode;
-  containerClassName?: string;
 };
 
 const routes = [
@@ -14,10 +13,14 @@ const routes = [
     label: "home",
     url: "/",
   },
-  {
-    label: "log",
-    url: "/log",
-  },
+  // {
+  //   label: "resume",
+  //   url: "/resume",
+  // },
+  // {
+  //   label: "log",
+  //   url: "/log",
+  // },
   {
     label: "watching",
     url: "https://letterboxd.com/mcjsimka/",
