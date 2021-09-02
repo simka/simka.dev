@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 
-import homeImage from "../assets/index.jpg";
+import homeImage from "../assets/index.webp";
 import Layout from "../components/Layout";
 import Text from "../components/Text";
 import Link from "../components/Link";
