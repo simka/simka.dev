@@ -8,10 +8,10 @@ type Props = {
 };
 
 function Link({ href, children, className, ...rest }: Props) {
-  const internal = href.startsWith("/");
+  const isInternal = href.startsWith("/");
   const classNames = cx("underline", className);
 
-  if (internal) {
+  if (isInternal) {
     return (
       <NextLink href={href} {...rest}>
         <a className={classNames}>{children}</a>

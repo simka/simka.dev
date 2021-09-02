@@ -1,8 +1,10 @@
 import React from "react";
 import Head from "next/head";
+import cx from "classnames";
 
-import Link from "./Link";
-import Text from "./Text";
+import Copyright from "./Copyright";
+import Navigation from "./Navigation";
+import styles from "./Layout.module.css";
 
 type Props = {
   children: React.ReactNode;
@@ -13,14 +15,6 @@ const routes = [
     label: "home",
     url: "/",
   },
-  // {
-  //   label: "resume",
-  //   url: "/resume",
-  // },
-  // {
-  //   label: "log",
-  //   url: "/log",
-  // },
   {
     label: "watching",
     url: "https://letterboxd.com/mcjsimka/",
@@ -42,35 +36,39 @@ function Layout({ children }: Props) {
             src="//gc.zgo.at/count.js"
           ></script>
         ) : null}
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👹</text></svg>"
+        />
       </Head>
-      <div className="min-h-screen flex flex-row-reverse">
-        <div className="flex flex-col px-4 xl:px-8 max-w-3xl xl:max-w-4xl 2xl:max-w-6xl">
-          <header className="pt-8 xl:pt-10 2xl:pt-12">
-            <nav>
-              {routes.map((route) => (
-                <Link href={route.url} key={route.url} className="mr-3">
-                  {route.label}
-                </Link>
-              ))}
-            </nav>
-          </header>
-          <main className="flex flex-1 flex-col">{children}</main>
-          <footer className="py-4">
-            <Text className="text-xs">
-              Unless otherwise stated, all{" "}
-              <Link href="https://github.com/simka/simka.dev">source code</Link>{" "}
-              is licensed under{" "}
-              <Link href="https://www.gnu.org/licenses/agpl-3.0.en.html">
-                GNU AGPL version 3.0 or later
-              </Link>{" "}
-              and all other content is licensed under{" "}
-              <Link href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-                Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-                International (CC BY-NC-SA 4.0)
-              </Link>
-            </Text>
-          </footer>
-        </div>
+      <div
+        className={cx(
+          "grid",
+          "grid-cols-7",
+          "max-w-7xl",
+          "min-h-screen",
+          styles.gridWrapper
+        )}
+      >
+        <header
+          className={cx(
+            "col-span-7",
+            "lg:col-span-1",
+            "lg:row-span-2",
+            "p-5",
+            "row-span-1",
+          )}
+        >
+          <Navigation routes={routes} />
+        </header>
+        <main
+          className={cx("col-span-7", "lg:col-span-6", "lg:row-span-2", "p-5")}
+        >
+          {children}
+        </main>
+        <footer className={cx("col-span-7", "p-5")}>
+          <Copyright />
+        </footer>
       </div>
     </>
   );

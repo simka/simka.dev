@@ -13,7 +13,7 @@ function Home() {
         <title>simka</title>
       </Head>
       <Layout>
-        <article className="my-8 xl:my-12 2xl:my-16">
+        <article>
           <Text className="mb-12">
             maciej simka makes{" "}
             <Link href="https://github.com/simka">software</Link>, photos and{" "}
