@@ -1,12 +1,9 @@
 import React from "react";
 
+import { routes } from "../routes";
 import Link from "./Link";
 
-type Props = {
-  routes: { label: string; url: string }[];
-};
-
-function Navigation({ routes }: Props) {
+function Navigation() {
   return (
     <nav className="flex flex-row lg:flex-col space-x-3 lg:space-x-0">
       {routes.map((route) => (

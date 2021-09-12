@@ -10,25 +10,6 @@ type Props = {
   children: React.ReactNode;
 };
 
-const routes = [
-  {
-    label: "home",
-    url: "/",
-  },
-  {
-    label: "log",
-    url: "/log",
-  },
-  {
-    label: "watching",
-    url: "https://letterboxd.com/mcjsimka/",
-  },
-  {
-    label: "reading",
-    url: "https://www.goodreads.com/simka",
-  },
-];
-
 function Layout({ children }: Props) {
   return (
     <>
@@ -60,10 +41,10 @@ function Layout({ children }: Props) {
             "lg:col-span-1",
             "lg:row-span-2",
             "p-5",
-            "row-span-1",
+            "row-span-1"
           )}
         >
-          <Navigation routes={routes} />
+          <Navigation />
         </header>
         <main
           className={cx("col-span-7", "lg:col-span-6", "lg:row-span-2", "p-5")}
