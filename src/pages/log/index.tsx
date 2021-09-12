@@ -1,12 +1,14 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
+import { getPlaiceholder } from "plaiceholder";
 
-import { getAllLogEntries } from "../../lib/api";
-import { markdownToHtml } from "../../lib/markdownToHtml";
+import { client, logEntryPredicate } from "../../lib/prismic";
 import Layout from "../../components/Layout";
 import LogEntry from "../../components/LogEntry";
 
-function LogPage({ allEntries }) {
+const preloadedIndices = [0, 1];
+
+function LogPage({ entries }) {
   return (
     <>
       <Head>
@@ -14,9 +16,12 @@ function LogPage({ allEntries }) {
       </Head>
       <Layout>
         <ul>
-          {allEntries.map((entry) => (
-            <li key={entry.slug}>
-              <LogEntry entry={entry} />
+          {entries.map((entry, index) => (
+            <li key={entry.uid}>
+              <LogEntry
+                entry={entry}
+                preloadPhoto={preloadedIndices.includes(index)}
+              />
             </li>
           ))}
         </ul>
@@ -28,16 +33,23 @@ function LogPage({ allEntries }) {
 export default LogPage;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allEntries = getAllLogEntries();
+  const result = await client.query(logEntryPredicate);
 
   const entries = await Promise.all(
-    allEntries.map(async (entry) => ({
-      ...entry,
-      content: await markdownToHtml(entry.content),
-    }))
+    result.results.map(async (entry) => {
+      const { blurhash } = await getPlaiceholder(entry.data.photo.url);
+
+      return {
+        ...entry.data,
+        uid: entry.uid,
+        photo: { ...entry.data.photo, blurhash },
+      };
+    })
   );
 
   return {
-    props: { allEntries: entries },
+    props: {
+      entries,
+    },
   };
 };

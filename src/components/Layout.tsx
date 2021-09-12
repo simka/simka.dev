@@ -16,6 +16,10 @@ const routes = [
     url: "/",
   },
   {
+    label: "log",
+    url: "/log",
+  },
+  {
     label: "watching",
     url: "https://letterboxd.com/mcjsimka/",
   },

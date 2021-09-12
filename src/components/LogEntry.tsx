@@ -1,38 +1,57 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import cx from "classnames";
+import { RichText } from "prismic-reactjs";
+import { BlurhashCanvas } from "react-blurhash";
 
 type Props = {
+  preloadPhoto?: boolean;
   entry: {
-    slug: string;
-    content: string;
-    image?: string;
-    imageDimensions?: {
-      width: string;
-      height: string;
+    date: string;
+    uid: string;
+    photo?: {
+      url: string;
+      alt: string;
+      copyright: string;
+      dimensions: {
+        width: number;
+        height: number;
+      };
+      blurhash: any;
+      imgProps: any;
     };
+    content?: any;
   };
 };
 
-function LogEntry({ entry }: Props) {
+function LogEntry({ entry, preloadPhoto = false }: Props) {
   return (
-    <article className="my-8 xl:my-12 2xl:my-16">
-      <h1 className="underline mb-4">
-        <Link href={`/log/${entry.slug}`}>
-          <a>{entry.slug}</a>
+    <article className="mb-11">
+      <h1 className="underline mb-5">
+        <Link href={`/log/${entry.uid}`}>
+          <a>{entry.uid}</a>
         </Link>
       </h1>
-      {entry.image ? (
-        <Image
-          src={entry.image}
-          width={entry.imageDimensions.width}
-          height={entry.imageDimensions.height}
-        />
+      {entry.photo ? (
+        <div className={cx("block", "relative", "overflow-hidden", "mb-5")}>
+          <BlurhashCanvas
+            {...entry.photo.blurhash}
+            punch={1}
+            className={cx("absolute", "inset-0")}
+          />
+          <Image
+            src={entry.photo.url}
+            width={entry.photo.dimensions.width}
+            height={entry.photo.dimensions.height}
+            priority={preloadPhoto}
+          />
+        </div>
       ) : null}
-      <div
-        className="prose"
-        dangerouslySetInnerHTML={{ __html: entry.content }}
-      />
+      {entry.content ? (
+        <p className={cx("mb-5")}>{RichText.asText(entry.content)}</p>
+      ) : null}
+      <p>///</p>
     </article>
   );
 }
