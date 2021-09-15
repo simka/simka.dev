@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/work-sans": "^4.5.1",
+    "@plaiceholder/next": "^2.1.0",
     "@prismicio/client": "^5.1.0",
     "@tailwindcss/typography": "^0.4.1",
     "@types/node": "^16.9.1",
