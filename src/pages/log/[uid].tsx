@@ -41,7 +41,6 @@ export const getStaticProps: GetStaticProps = async ({
 }) => {
   const result = await client.getByUID("log_entry", uid, {});
   const { blurhash } = await getPlaiceholder(result.data.photo.url);
-  console.log(result);
 
   return {
     props: {
