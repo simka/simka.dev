@@ -8,9 +8,10 @@ import styles from "./Layout.module.css";
 
 type Props = {
   children: React.ReactNode;
+  className?: string;
 };
 
-function Layout({ children }: Props) {
+function Layout({ children, className }: Props) {
   return (
     <>
       <Head>
@@ -49,7 +50,13 @@ function Layout({ children }: Props) {
           <Navigation />
         </header>
         <main
-          className={cx("col-span-7", "lg:col-span-6", "lg:row-span-2", "p-5")}
+          className={cx(
+            className,
+            "col-span-7",
+            "lg:col-span-6",
+            "lg:row-span-2",
+            "p-5"
+          )}
         >
           {children}
         </main>

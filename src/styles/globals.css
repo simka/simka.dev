@@ -2,7 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@page {
+  size: auto;
+  margin: 0mm;
+}
+
 html {
   @apply text-gray-300 bg-gray-800;
   font-size: 14px;
+}
+
+@media print {
+  html {
+    font-size: 12px;
+  }
 }

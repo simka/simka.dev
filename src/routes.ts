@@ -4,6 +4,10 @@ export const routes = [
     url: "/",
   },
   {
+    label: "resume",
+    url: "/resume",
+  },
+  {
     label: "log",
     url: "/log",
   },
