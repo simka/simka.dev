@@ -1,5 +1,4 @@
 import { GetStaticProps } from "next";
-import Head from "next/head";
 import { getPlaiceholder } from "plaiceholder";
 
 import { client, logEntryPredicate } from "../../lib/prismic";
@@ -10,23 +9,18 @@ const preloadedIndices = [0, 1];
 
 function LogPage({ entries }) {
   return (
-    <>
-      <Head>
-        <title>simka.dev</title>
-      </Head>
-      <Layout>
-        <ul>
-          {entries.map((entry, index) => (
-            <li key={entry.uid}>
-              <LogEntry
-                entry={entry}
-                preloadPhoto={preloadedIndices.includes(index)}
-              />
-            </li>
-          ))}
-        </ul>
-      </Layout>
-    </>
+    <Layout>
+      <ul>
+        {entries.map((entry, index) => (
+          <li key={entry.uid}>
+            <LogEntry
+              entry={entry}
+              preloadPhoto={preloadedIndices.includes(index)}
+            />
+          </li>
+        ))}
+      </ul>
+    </Layout>
   );
 }
 

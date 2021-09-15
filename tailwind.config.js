@@ -1,7 +1,10 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
+  purge: [
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -15,6 +18,9 @@ module.exports = {
       sans: ["Work Sans", "monospace"],
     },
     extend: {
+      screens: {
+        print: { raw: "print" },
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: [

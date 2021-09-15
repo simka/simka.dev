@@ -25,6 +25,7 @@ function Layout({ children }: Props) {
           rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👹</text></svg>"
         />
+        <title>simka</title>
       </Head>
       <div
         className={cx(
@@ -41,7 +42,8 @@ function Layout({ children }: Props) {
             "lg:col-span-1",
             "lg:row-span-2",
             "p-5",
-            "row-span-1"
+            "row-span-1",
+            "print:hidden"
           )}
         >
           <Navigation />
@@ -51,7 +53,7 @@ function Layout({ children }: Props) {
         >
           {children}
         </main>
-        <footer className={cx("col-span-7", "p-5")}>
+        <footer className={cx("col-span-7", "p-5", "print:hidden")}>
           <Copyright />
         </footer>
       </div>
