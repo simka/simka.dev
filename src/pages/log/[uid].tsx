@@ -34,8 +34,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params: { uid } }) => {
-  const result = await client.getByUID("log_entry", uid);
+export const getStaticProps: GetStaticProps = async ({
+  params: { uid },
+}: {
+  params: { uid: string };
+}) => {
+  const result = await client.getByUID("log_entry", uid, {});
   const { blurhash } = await getPlaiceholder(result.data.photo.url);
   console.log(result);
 
