@@ -5,7 +5,7 @@ import Text from "./Text";
 
 function Copyright() {
   return (
-    <Text className="text-xs">
+    <Text>
       Unless otherwise stated, all{" "}
       <Link href="https://github.com/simka/simka.dev">source code</Link> is
       licensed under{" "}
