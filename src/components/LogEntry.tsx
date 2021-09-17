@@ -42,6 +42,7 @@ function LogEntry({ entry, preloadPhoto = false }: Props) {
           />
           <Image
             src={entry.photo.url}
+            alt={entry.photo.alt}
             width={entry.photo.dimensions.width}
             height={entry.photo.dimensions.height}
             priority={preloadPhoto}

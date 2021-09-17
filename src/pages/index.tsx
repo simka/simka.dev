@@ -15,7 +15,7 @@ function Home() {
           <Link href="/log">photos</Link> and{" "}
           <Link href="https://soundcloud.com/day_sleeper">sounds</Link>.
         </Text>
-        <Image src={homeImage} placeholder="blur" priority />
+        <Image src={homeImage} alt="photography of an art installation composed of tv sets among tropical plants" placeholder="blur" priority />
       </article>
     </Layout>
   );
