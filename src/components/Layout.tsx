@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Script from "next/script";
 import cx from "classnames";
 
 import Copyright from "./Copyright";
@@ -14,14 +15,13 @@ type Props = {
 function Layout({ children, className }: Props) {
   return (
     <>
+      {process.env.NODE_ENV !== "development" ? (
+        <Script
+          data-goatcounter="https://simka.goatcounter.com/count"
+          src="//gc.zgo.at/count.js"
+        />
+      ) : null}
       <Head>
-        {process.env.NODE_ENV !== "development" ? (
-          <script
-            data-goatcounter="https://simka.goatcounter.com/count"
-            async
-            src="//gc.zgo.at/count.js"
-          ></script>
-        ) : null}
         <link
           rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👹</text></svg>"
