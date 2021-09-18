@@ -73,7 +73,7 @@ function Home() {
                       >
                         {work.company}
                       </Link>{" "}
-                      /// {work.startDate} - {work.endDate}
+                      {"///"} {work.startDate} - {work.endDate}
                     </h4>
                     <p>{work.summary}</p>
                     {work.highlights ? (
@@ -101,7 +101,7 @@ function Home() {
                       <strong className="text-white print:text-black">
                         {education.area}
                       </strong>{" "}
-                      at {education.institution} /// {education.startDate} -{" "}
+                      at {education.institution} {"///"} {education.startDate} -{" "}
                       {education.endDate}
                     </h4>
                     <p>{education.description}</p>

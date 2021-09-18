@@ -52,7 +52,7 @@ function LogEntry({ entry, preloadPhoto = false }: Props) {
       {entry.content ? (
         <p className={cx("mb-5")}>{RichText.asText(entry.content)}</p>
       ) : null}
-      <p>///</p>
+      <p>{"///"}</p>
     </article>
   );
 }
