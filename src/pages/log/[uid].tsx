@@ -1,4 +1,5 @@
 import { GetStaticProps, GetStaticPaths } from "next";
+import Head from "next/head";
 import { getPlaiceholder } from "plaiceholder";
 
 import { client, logEntryPredicate } from "../../lib/prismic";
@@ -7,9 +8,14 @@ import LogEntry from "../../components/LogEntry";
 
 function LogEntryPage({ entry }) {
   return (
-    <Layout>
-      <LogEntry entry={entry} preloadPhoto />
-    </Layout>
+    <>
+      <Head>
+        <title>simka / log / {entry.uid}</title>
+      </Head>
+      <Layout>
+        <LogEntry entry={entry} preloadPhoto />
+      </Layout>
+    </>
   );
 }
 
