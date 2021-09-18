@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --port 1312",
+    "format": "prettier --write **/*.{js,jsx,ts,tsx,css,md}",
     "lint": "next lint",
     "prepare": "husky install",
     "start": "next start"
