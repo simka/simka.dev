@@ -8,10 +8,6 @@ export const routes = [
     url: "/resume",
   },
   {
-    label: "log",
-    url: "/log",
-  },
-  {
     label: "watching",
     url: "https://letterboxd.com/mcjsimka/",
   },

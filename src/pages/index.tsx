@@ -16,8 +16,7 @@ function Home() {
         <article>
           <Text className="mb-12">
             maciej simka makes{" "}
-            <Link href="https://github.com/simka">software</Link>,{" "}
-            <Link href="/log">photos</Link> and{" "}
+            <Link href="https://github.com/simka">software</Link>, photos and{" "}
             <Link href="https://soundcloud.com/day_sleeper">sounds</Link>.
           </Text>
           <Image
