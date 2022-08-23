@@ -12,6 +12,12 @@
     "prepare": "husky install",
     "test": ""
   },
+  "lint-staged": {
+    "*.{js,css,md,astro}": "prettier --write"
+  },
+  "dependencies": {
+    "@fontsource/work-sans": "^4.5.11"
+  },
   "devDependencies": {
     "@astrojs/image": "^0.3.6",
     "@astrojs/tailwind": "^1.0.0",
@@ -20,8 +26,5 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.5.2"
-  },
-  "lint-staged": {
-    "*.{js,css,md,astro}": "prettier --write"
   }
 }
