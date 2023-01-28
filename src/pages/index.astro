@@ -1,50 +1,25 @@
 ---
-import { Image } from "@astrojs/image/components";
-
-import HolyGrail from "../layouts/HolyGrail.astro";
-import Footer from "../components/Footer.astro";
-import image from "../assets/index.jpeg";
+// Welcome to Astro! Everything between these triple-dash code fences
+// is your "component front matter". It never runs in the browser.
+console.log("This runs in your terminal, not the browser!");
 ---
 
-<HolyGrail title="simka">
-  <div slot="header" class="pb-5">
-    <h1 class="text-2xl font-bold">simka</h1>
-  </div>
+<!-- Below is your "component template." It's just HTML, but with
+     some magic sprinkled in to help you build great templates. -->
+<html>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
 
-  <article class="pb-5">
-    <p class="pb-3">
-      i make <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/simka"
-        class="text-pink-600">software</a
-      >, <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.instagram.com/mcj.simka/"
-        class="text-pink-600">photos</a
-      > and sometimes
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://soundcloud.com/day_sleeper"
-        class="text-pink-600">sounds</a
-      >. you can also check out what i've been recently <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://letterboxd.com/mcjsimka/"
-        class="text-pink-600">watching</a
-      > and <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.goodreads.com/simka"
-        class="text-pink-600">reading</a
-      >.
-    </p>
-    <Image src={image} format="avif" />
-  </article>
+<script
+  type="text/partytown"
+  src="//gc.zgo.at/count.js"
+  data-goatcounter="https://simka.goatcounter.com/count"
+></script>
 
-  <div slot="footer">
-    <Footer />
-  </div>
-</HolyGrail>
+<style>
+  h1 {
+    color: orange;
+  }
+</style>
