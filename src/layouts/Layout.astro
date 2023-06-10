@@ -18,25 +18,111 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
+
 <style is:global>
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
+  @layer reset, theme, global, layout, components, utilities, states;
+
+  @layer reset {
+    /* box sizing */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    /* remove margins */
+    * {
+      margin: 0;
+    }
+
+    /* inherit font in forms */
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    /* core styles */
+    /* smooth scrolling */
+    html:focus-within {
+      scroll-behavior: smooth;
+    }
+
+    /* typographic improvements and min height */
+    body {
+      min-height: 100vh;
+      text-rendering: optimizeSpeed;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* baseline for default links */
+    a:not([class]) {
+      /* Relatively sized thickness and offset */
+      text-decoration-thickness: max(0.08em, 1px);
+      text-underline-offset: 0.15em;
+    }
+
+    /* media defaults */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* prevent overflows */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
+
+    /* honor reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html:focus-within {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   }
+
+  @layer theme {
+    :root {
+      /* Color styles */
+      --primary: hsl(265, 38%, 13%);
+      --secondary: hsl(283, 6%, 45%);
+      --tertiary: hsl(257, 15%, 91%);
+      --light: hsl(270, 100%, 99%);
+      --accent: hsl(278, 100%, 92%);
+      --accent--alt: hsl(279, 100%, 97%);
+      --accent--ui: hsl(284, 55%, 66%);
+    }
+  }
+
   html {
+    container: root / size;
     font-family: "neue-haas-grotesk-display", system-ui, sans-serif;
-    background-color: #f6f6f6;
-  }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    height: 100%; /* viewport height */
   }
 </style>
