@@ -1,3 +1,10 @@
 {
-  "name": "simka.dev"
+  "name": "simka.dev",
+"scripts": {
+		"build": "npx @11ty/eleventy",
+		"start": "npx @11ty/eleventy --serve --quiet"
+	},
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
 }
