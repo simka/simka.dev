@@ -1,10 +1,10 @@
 {
   "name": "simka.dev",
   "scripts": {
-    "build": "concurrently \"bun run build:*\"",
+    "build": "conc \"bun run build:*\"",
     "build:11ty": "bunx @11ty/eleventy",
     "build:css": "tailwindcss -i ./content/css/tailwind.css -o ./_site/css/tailwind.css --minify",
-    "start": "concurrently \"bun run start:*\"",
+    "start": "conc \"bun run start:*\"",
     "start:11ty": "bunx @11ty/eleventy --serve --quiet",
     "start:css": "tailwindcss -i ./content/css/tailwind.css -o ./_site/css/tailwind.css --watch"
   },
