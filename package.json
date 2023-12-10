@@ -1,10 +1,16 @@
 {
   "name": "simka.dev",
-"scripts": {
-		"build": "npx @11ty/eleventy",
-		"start": "npx @11ty/eleventy --serve --quiet"
-	},
+  "scripts": {
+    "build": "concurrently \"bun run build:*\"",
+    "build:11ty": "bunx @11ty/eleventy",
+    "build:css": "tailwindcss -i ./content/css/tailwind.css -o ./_site/css/tailwind.css --minify",
+    "start": "concurrently \"bun run start:*\"",
+    "start:11ty": "bunx @11ty/eleventy --serve --quiet",
+    "start:css": "tailwindcss -i ./content/css/tailwind.css -o ./_site/css/tailwind.css --watch"
+  },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "concurrently": "^8.2.2",
+    "tailwindcss": "^3.3.6"
   }
 }
