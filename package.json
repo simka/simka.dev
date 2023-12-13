@@ -7,7 +7,7 @@
     "format": "bunx prettier --write .",
     "start": "conc \"bun run start:*\"",
     "start:11ty": "bunx @11ty/eleventy --serve --quiet",
-    "start:css": "tailwindcss -i ./content/css/tailwind.css -o ./_site/css/tailwind.css --watch"
+    "start:css": "tailwindcss -i ./content/css/styles.css -o ./_site/css/styles.css --watch"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
