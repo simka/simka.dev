@@ -1,16 +1,15 @@
 ---
+import BaseLayout from "../layouts/base-layout.astro";
 
+import Center from "../components/center.astro";
+import Stack from "../components/stack.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Center>
+    <Stack>
+      <h1>hallöchen!</h1>
+      <p>i'm simka (he/him) and i'm a software developer based in berlin.</p>
+    </Stack>
+  </Center>
+</BaseLayout>
